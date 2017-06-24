@@ -17,11 +17,22 @@ def timed_job():
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth)
 
-    # markovify
+    # markovify & 
     with open("./whitman.txt") as f:
-        text = f.read()
-    text_model = markovify.Text(text)
-    tweet = text_model.make_short_sentence(140)
+        text += f.read()
+    
+    tweet = ''
+    
+    for i in range(0, 4):
+        line = text_model.make_short_sentence(35)
+        while line == None:
+            line = text_model.make_short_sentence(35)
+        if i < 3:
+            line = line[:-1]
+        if i == 0:
+            tweet += line
+        else:
+            tweet += '\n' + line
 
     # tweet
     print(tweet)
