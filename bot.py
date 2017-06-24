@@ -17,13 +17,15 @@ def timed_job():
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth)
 
-    # markovify
+    # grab text to feed to markovify
     with open("./whitman.txt") as f:
         text += f.read()
+   
+    # generate text model and markovify it
+    text_model = markovify.Text(text)
     
-    # generate tweet
+    # use text model to make lines for poem
     tweet = ''
-    
     for i in range(0, 4):
         line = text_model.make_short_sentence(35)
         while line == None:
