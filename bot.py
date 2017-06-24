@@ -19,7 +19,7 @@ def timed_job():
 
     # grab text to feed to markovify
     with open("./whitman.txt") as f:
-        text += f.read()
+        text = f.read()
    
     # generate text model and markovify it
     text_model = markovify.Text(text)
