@@ -25,14 +25,14 @@ def timed_job():
     text_model = markovify.Text(text)
 
     # randomly generate a 4-line poem or a 140-character string
-    boolean = random.choice([True, False])
+    boolean = random.choice([0, 1])
     
-    if boolean == True:
+    if boolean:
         tweet = ''
         for x in range(0, 4):
-            line = text_model.make_short_sentence(30)
+            line = text_model.make_short_sentence(35)
             while line == None:
-                line = text_model.make_short_sentence(30)
+                line = text_model.make_short_sentence(35)
             if x < 3:
                 line = line[:-1]
             if x == 0:
