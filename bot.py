@@ -5,9 +5,9 @@ import tweepy
 import random
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-# schedule tweets for every 2 hours
+# schedule tweets for every 6 hours
 sched = BlockingScheduler()
-@sched.scheduled_job('interval', minutes=120)
+@sched.scheduled_job('interval', minutes=360)
 def timed_job():
 
     # authenticate to twitter
