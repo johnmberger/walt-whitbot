@@ -5,4 +5,4 @@ Inspired by [poembot](https://github.com/timothybeal/poembot), this little twitt
 
 Built in Python using Markovify, Tweepy, and a .txt file with a bunch of Walt Whitman poems. 
 
-Check me out on (https://twitter.com/waltwhitbot)[Twitter]. 
+Check me out on [Twitter](https://twitter.com/waltwhitbot). 
